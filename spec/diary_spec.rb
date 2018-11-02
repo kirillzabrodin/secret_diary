@@ -2,11 +2,10 @@ require 'diary'
 
 describe Diary do
 
-  it { is_expected.to respond_to :add_entry}
-
-  it { is_expected.to respond_to :get_entry}
-
   describe '#add_entry' do
+
+    it { is_expected.to respond_to :add_entry}
+
     it 'is locked by default' do
       expect { subject.add_entry }.to raise_error "#{described_class.name} is locked"
     end
@@ -25,6 +24,8 @@ describe Diary do
   end
 
   describe '#get_entry' do
+
+    it { is_expected.to respond_to :get_entry}
 
     it 'is locked by default' do
       expect { subject.get_entry }.to raise_error "#{described_class.name} is locked"
